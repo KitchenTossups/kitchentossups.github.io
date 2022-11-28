@@ -8,22 +8,119 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
+    <h1 class="title">Kitchen Tossups group</h1>
+    <div class="subtitle">
+        <p>Piazza Panic - ENG1 Cohort 1 Team 9</p>
+    </div>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox"/>
+            <span class="slider round"></span>
+        </label>
+        <p style="margin-bottom: 10px;">Dark Mode</p>
+    </div>
     <div id="content">
         <div class="container" style="margin-bottom: 20px;">
-            <h1 class="title">Kitchen Tossups group</h1>
-            <div class="subtitle">
-                <p>Piazza Panic</p>
+            <div class="card">
+                <div class="card-content">
+                    <p class="title">Welcome</p>
+                    <div class="content">
+                        Welcome to Kitchen Tossups group, a University of York Computer Science Engineering 1 module team (Cohort 1, Team 9)
+                    </div>
+                </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <p class="title">Introduction</p>
+                    <p class="title">Contents</p>
                     <div class="content">
-                        This is an example box!
+                        <ul>
+                            <li>
+                                <a href="#vc">Version Control</a>
+                            </li>
+                            <li>
+                                <a href="#jar">Executable JAR</a>
+                            </li>
+                            <li>
+                                <a href="#pdf">Document PDFs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="vc">
+                <div class="card-content">
+                    <p class="title">Version Control</p>
+                    <div class="content">
+                        We use GitHub as our version control software.<br>
+                        Below are the GitHub repositories that we have and used.
+                        <ul>
+                            <li>
+                                <a href="https://github.com/KitchenTossups/piazza-panic" target="_blank">Piazza Panic</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/KitchenTossups/kitchentossups.github.io" target="_blank">Website</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="jar">
+                <div class="card-content">
+                    <p class="title">Executable JAR</p>
+                    <div class="content">
+                        Download <span class="hover-text" data-hover="Coming soon!">piazzaPanic.jar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="pdf">
+                <div class="card-content">
+                    <p class="title">Documents</p>
+                    <div class="content">
+                        Here are all the PDFs required for the module:
+                        <ul>
+                            <li>
+                                Requirements - <span class="hover-text" data-hover="Coming Soon!">Req1.pdf</span>
+                            </li>
+                            <li>
+                                Architecture - <span class="hover-text" data-hover="Coming Soon!">Arch1.pdf</span>
+                            </li>
+                            <li>
+                                Method selection and planning - <span class="hover-text" data-hover="Coming Soon!">Plan1.pdf</span>
+                            </li>
+                            <li>
+                                Risk assessment and mitigation - <span class="hover-text" data-hover="Coming Soon!">Risk1.pdf</span>
+                            </li>
+                            <li>
+                                Implementation - <span class="hover-text" data-hover="Coming Soon!">Impl1.pdf</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer id="footer">Kitchen Tossups - created by Ben Brown, Liam Burnand, Jack Cameron, Cameron Fox, Eoin O'Connor and Adam Penny 2022</footer>
+    <footer id="footer">Kitchen Tossups - created by Ben Brown, Liam Burnand, Jack Cameron, Cameron Fox, Eoin O'Connor and
+        Adam Penny 2022
+    </footer>
 </body>
+<script>
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggleSwitch.checked = true;
+    }
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+</script>
 </html>
