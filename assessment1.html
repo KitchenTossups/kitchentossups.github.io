@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kitchen Tossups</title>
+    <title>Kitchen Tossups - Assessment 1</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,12 +23,12 @@
     <div id="container" class="container" style="margin-bottom: 20px;">
         <div class="card">
             <div class="card-content">
-                <p class="title">Welcome</p>
-                <div class="content">
-                    Welcome to Kitchen Tossup's group, a University of York Computer Science Engineering 1 module team
-                    (Cohort 1, Team 9).<br><br>
-                    This is the website for both assessments and the individual pages can be found below.
-                </div>
+                <p class="title">Assessment 1</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <a href="/">Return to main page</a>
             </div>
         </div>
         <div class="card">
@@ -37,28 +37,19 @@
                 <div class="content">
                     <ul>
                         <li>
-                            <a href="#pages">Assessment pages</a>
-                        </li>
-                        <li>
                             <a href="#vc">Version Control</a>
                         </li>
                         <li>
-                            <a href="#team">Team Members</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="card" id="pages">
-            <div class="card-content">
-                <p class="title">Assessment pages</p>
-                <div class="content">
-                    <ul>
-                        <li>
-                    <a href="assessment1">Assessment 1</a>
+                            <a href="#jar">Executable JAR</a>
                         </li>
                         <li>
-                    <a href="assessment2">Assessment 2</a>
+                            <a href="#pdf">Document PDFs</a>
+                        </li>
+                        <li>
+                            <a href="#uml">Architecture UML Diagram</a>
+                        </li>
+                        <li>
+                            <a href="#crc">Architecture CRC Cards</a>
                         </li>
                     </ul>
                 </div>
@@ -69,12 +60,13 @@
                 <p class="title">Version Control</p>
                 <div class="content">
                     We used GitHub as our version control software.<br>
-                    Here is the GitHub repository for the website: <a href="https://github.com/KitchenTossups/kitchentossups.github.io"
-                               target="_blank">GitHub</a><br><br>
-                    The website commits list is in the table below, it takes a second or so to load so please be patient.
+                    Here is the GitHub repository for the game: <a href="https://github.com/KitchenTossups/piazza-panic"
+                                                                   target="_blank">GitHub</a><br><br>
+                    The website commits list is in the table below, it takes a second or so to load so please be
+                    patient.
                 </div>
                 <script>
-                    let url = "https://getcommits.bswdi.co.uk/listfull?owner=KitchenTossups&repo=kitchentossups.github.io";
+                    let url = "https://getcommits.bswdi.co.uk/listfull?owner=KitchenTossups&repo=piazza-panic";
 
                     $.ajax({
                         url: url,
@@ -152,7 +144,7 @@
                                 document.getElementById("container").innerHTML += modalContents;
 
                                 let tableContents = '<';
-                                tableContents += 'tr onclick="openModal(\''+data[i].sha.trim()+'\');"><td';
+                                tableContents += 'tr onclick="openModal(\'' + data[i].sha.trim() + '\');"><td';
                                 tableContents += '>';
                                 tableContents += '<';
                                 tableContents += 'img src="' + data[i].author.avatar_url + '" style="width: 32px; height: 32px; max-width: 32px;" alt="@' + data[i].author.login + '"></';
@@ -237,26 +229,85 @@
                 <p><small>This table will load, give it a minute to retrieve all the data</small></p>
             </div>
         </div>
-        <div class="card" id="team">
+        <div class="card" id="jar">
             <div class="card-content">
-                <p class="title">Team members</p>
+                <p class="title">Executable JAR</p>
                 <div class="content">
-                    This is the team!
+                    Download <span class="hover-text" data-hover="Piazza Panic jar!"><a href="PiazzaPanic.jar">PiazzaPanic.jar</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="pdf">
+            <div class="card-content">
+                <p class="title">Documents</p>
+                <div class="content">
+                    Here are all the PDFs required for the module:
                     <ul>
-                        <li>Ben Brown</li>
-                        <li>Liam Burnand</li>
-                        <li>Jack Cameron</li>
-                        <li>Cameron Fox</li>
-                        <li>Eoin O'Connor</li>
-                        <li>Adam Penny</li>
+                        <li>
+                            Requirements - <span class="hover-text" data-hover="Requirements!"><a href="Req1.pdf">Req1.pdf</a></span>
+                        </li>
+                        <li>
+                            Architecture - <span class="hover-text" data-hover="Architecture!"><a href="Arch1.pdf">Arch1.pdf</a></span>
+                        </li>
+                        <li>
+                            Method Selection and Planning - <span class="hover-text" data-hover="Planning!"><a
+                                href="Plan1.pdf">Plan1.pdf</a></span>
+                        </li>
+                        <li>
+                            Risk Assessment and Mitigation - <span class="hover-text" data-hover="Risk Assessement!"><a
+                                href="Risk1.pdf">Risk1.pdf</a></span>
+                        </li>
+                        <li>
+                            Implementation - <span class="hover-text" data-hover="Implementation!"><a href="Impl1.pdf">Impl1.pdf</a></span>
+                        </li>
                     </ul>
+                    <br>
+                    <p class="subtitle">Extra Documents</p>
+                    <p>A <a href="meeting.pdf">link</a> to the notes our team took during a meeting with Antonio
+                        Garcia-Dominguez.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="uml">
+            <div class="card-content">
+                <p class="title">Architecture UML Diagram</p>
+                <div class="content">
+                    <h3>Diagram</h3>
+                    <img src="UML.png" alt="UMLDiagram" style="max-height:700px; max-width:100%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="crc">
+            <div class="card-content">
+                <p class="title">Architecture CRC Cards</p>
+                <div class="content">
+                    <h3>Chef</h3>
+                    <img src="img1.jpg" alt="crccard1" width="650px" height="350px">
+                    <br><br>
+                    <h3>Customer</h3>
+                    <img src="img2.jpg" alt="crccard2" width="650px" height="350px">
+                    <br><br>
+                    <h3>Food Chest</h3>
+                    <img src="img3.jpg" alt="crccard3" width="650px" height="350px">
+                    <br><br>
+                    <h3>Ingredient</h3>
+                    <img src="img4.jpg" alt="crccard4" width="650px" height="350px">
+                    <br><br>
+                    <h3>Station</h3>
+                    <img src="img5.jpg" alt="crccard5" width="650px" height="350px">
+                    <br><br>
+                    <h3>Order</h3>
+                    <img src="img6.jpg" alt="crccard6" width="650px" height="350px">
                 </div>
             </div>
         </div>
     </div>
 </div>
 <br><br>
-<footer style="text-align: center; position: fixed; margin: 0 0 0 -10px; bottom: 0; width: 100%; height: 40px;">Kitchen Tossups - created by Ben Brown, Liam Burnand, Jack Cameron, Cameron Fox, Eoin O'Connor and
+<footer style="text-align: center; position: fixed; margin: 0 0 0 -10px; bottom: 0; width: 100%; height: 40px;">Kitchen
+    Tossups - created by Ben Brown, Liam Burnand, Jack Cameron, Cameron Fox, Eoin O'Connor and
     Adam Penny - 2022-2023
 </footer>
 </body>

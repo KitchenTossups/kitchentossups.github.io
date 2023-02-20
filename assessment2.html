@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kitchen Tossups</title>
+    <title>Kitchen Tossups - Assessment 2</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,12 +23,12 @@
     <div id="container" class="container" style="margin-bottom: 20px;">
         <div class="card">
             <div class="card-content">
-                <p class="title">Welcome</p>
-                <div class="content">
-                    Welcome to Kitchen Tossup's group, a University of York Computer Science Engineering 1 module team
-                    (Cohort 1, Team 9).<br><br>
-                    This is the website for both assessments and the individual pages can be found below.
-                </div>
+                <p class="title">Assessment 2</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <a href="/">Return to main page</a>
             </div>
         </div>
         <div class="card">
@@ -37,29 +37,20 @@
                 <div class="content">
                     <ul>
                         <li>
-                            <a href="#pages">Assessment pages</a>
-                        </li>
-                        <li>
                             <a href="#vc">Version Control</a>
                         </li>
-                        <li>
-                            <a href="#team">Team Members</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="card" id="pages">
-            <div class="card-content">
-                <p class="title">Assessment pages</p>
-                <div class="content">
-                    <ul>
-                        <li>
-                    <a href="assessment1">Assessment 1</a>
-                        </li>
-                        <li>
-                    <a href="assessment2">Assessment 2</a>
-                        </li>
+<!--                        <li>-->
+<!--                            <a href="#jar">Executable JAR</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#pdf">Document PDFs</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#uml">Architecture UML Diagram</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="#crc">Architecture CRC Cards</a>-->
+<!--                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -69,12 +60,13 @@
                 <p class="title">Version Control</p>
                 <div class="content">
                     We used GitHub as our version control software.<br>
-                    Here is the GitHub repository for the website: <a href="https://github.com/KitchenTossups/kitchentossups.github.io"
-                               target="_blank">GitHub</a><br><br>
-                    The website commits list is in the table below, it takes a second or so to load so please be patient.
+                    Here is the GitHub repository for the game: <a href="https://github.com/KitchenTossups/Assessment2-Fork"
+                                                                   target="_blank">GitHub</a><br><br>
+                    The website commits list is in the table below, it takes a second or so to load so please be
+                    patient.
                 </div>
                 <script>
-                    let url = "https://getcommits.bswdi.co.uk/listfull?owner=KitchenTossups&repo=kitchentossups.github.io";
+                    let url = "https://getcommits.bswdi.co.uk/listfull?owner=KitchenTossups&repo=Assessment2-Fork";
 
                     $.ajax({
                         url: url,
@@ -152,7 +144,7 @@
                                 document.getElementById("container").innerHTML += modalContents;
 
                                 let tableContents = '<';
-                                tableContents += 'tr onclick="openModal(\''+data[i].sha.trim()+'\');"><td';
+                                tableContents += 'tr onclick="openModal(\'' + data[i].sha.trim() + '\');"><td';
                                 tableContents += '>';
                                 tableContents += '<';
                                 tableContents += 'img src="' + data[i].author.avatar_url + '" style="width: 32px; height: 32px; max-width: 32px;" alt="@' + data[i].author.login + '"></';
@@ -237,26 +229,11 @@
                 <p><small>This table will load, give it a minute to retrieve all the data</small></p>
             </div>
         </div>
-        <div class="card" id="team">
-            <div class="card-content">
-                <p class="title">Team members</p>
-                <div class="content">
-                    This is the team!
-                    <ul>
-                        <li>Ben Brown</li>
-                        <li>Liam Burnand</li>
-                        <li>Jack Cameron</li>
-                        <li>Cameron Fox</li>
-                        <li>Eoin O'Connor</li>
-                        <li>Adam Penny</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <br><br>
-<footer style="text-align: center; position: fixed; margin: 0 0 0 -10px; bottom: 0; width: 100%; height: 40px;">Kitchen Tossups - created by Ben Brown, Liam Burnand, Jack Cameron, Cameron Fox, Eoin O'Connor and
+<footer style="text-align: center; position: fixed; margin: 0 0 0 -10px; bottom: 0; width: 100%; height: 40px;">Kitchen
+    Tossups - created by Ben Brown, Liam Burnand, Jack Cameron, Cameron Fox, Eoin O'Connor and
     Adam Penny - 2022-2023
 </footer>
 </body>
