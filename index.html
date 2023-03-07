@@ -24,6 +24,7 @@
         <div class="subtitle">
             <p>Piazza Panic - ENG1 Cohort 1 Team 9</p>
         </div>
+        <img src="118891201.png" height="90px" width="90px">
     </div>
 </section>
 <div id="content">
@@ -88,76 +89,6 @@
                         type: 'get',
                         success: function (data) {
                             for (let i = 0; i < data.length; i++) {
-                                // let modalContents = '<';
-                                // modalContents += 'div id="modal-' + data[i].sha + '" class="modal"><';
-                                // modalContents += 'div class="modal-background"></';
-                                // modalContents += 'div><';
-                                // modalContents += 'div class="modal-content"><';
-                                // modalContents += 'div class="box"><';
-                                // modalContents += 'article class="media"><';
-                                // modalContents += 'div class="media-left"><';
-                                // modalContents += 'figure class="image is-96x96"><';
-                                // modalContents += 'img src="' + data[i].author.avatar_url + '" style="width: 96px; height: 96px; max-width: 96px;" alt="' + data[i].author.login + '"></';
-                                // modalContents += 'figure></';
-                                // modalContents += 'div><';
-                                // modalContents += 'div class="media-content"><';
-                                // modalContents += 'div class="content"><';
-                                // modalContents += 'p>';
-                                // modalContents += '<';
-                                // modalContents += 'strong>' + data[i].commit.author.name + '</';
-                                // modalContents += 'strong> <';
-                                // modalContents += 'a href="' + data[i].author.html_url + '" target="_blank"><';
-                                // modalContents += 'small>' + data[i].author.login + ' - (click to view in GitHub)</';
-                                // modalContents += 'small></a';
-                                // modalContents += '>';
-                                // modalContents += '<';
-                                // modalContents += 'br><';
-                                // modalContents += 'strong>Commit Id</';
-                                // modalContents += 'strong> <';
-                                // modalContents += 'a href="' + data[i].html_url + '" target="_blank"><';
-                                // modalContents += 'small>' + data[i].sha + ' - (click to view in GitHub)</';
-                                // modalContents += 'small></a';
-                                // modalContents += '>';
-                                // modalContents += '<';
-                                // modalContents += 'br><';
-                                // modalContents += 'strong>Time</';
-                                // modalContents += 'strong> <';
-                                // modalContents += 'small>' + data[i].commit.author.date + '</';
-                                // modalContents += 'small><';
-                                // modalContents += 'br><';
-                                // modalContents += 'strong>Message</';
-                                // modalContents += 'strong> <';
-                                // modalContents += 'small>' + data[i].commit.message + '</';
-                                // modalContents += 'small><';
-                                // modalContents += 'br><';
-                                // modalContents += 'strong>Lines of code changed</';
-                                // modalContents += 'strong><';
-                                // modalContents += 'br>Additions <';
-                                // modalContents += 'small>' + data[i].stats.additions + '</';
-                                // modalContents += 'small><';
-                                // modalContents += 'br>Deletions <';
-                                // modalContents += 'small>' + data[i].stats.deletions + '</';
-                                // modalContents += 'small><';
-                                // modalContents += 'br>Total <';
-                                // modalContents += 'small>' + data[i].stats.total + '</';
-                                // modalContents += 'small><';
-                                // modalContents += 'br><';
-                                // modalContents += 'strong>Files changed</';
-                                // modalContents += 'strong> <';
-                                // modalContents += 'small>' + data[i].files.length + '</';
-                                // modalContents += 'small>';
-                                // modalContents += '</';
-                                // modalContents += 'p></';
-                                // modalContents += 'div></';
-                                // modalContents += 'div></';
-                                // modalContents += 'article></';
-                                // modalContents += 'div></';
-                                // modalContents += 'div><';
-                                // modalContents += 'button class="modal-close is-large" aria-label="close"></';
-                                // modalContents += 'button></div';
-                                // modalContents += '>';
-                                // document.getElementById("container").innerHTML += modalContents;
-
                                 let tableContents = '<';
                                 tableContents += 'tr onclick="openModal(\''+data[i].sha.trim()+'\');"><td';
                                 tableContents += '>';
@@ -284,26 +215,26 @@
                                     document.getElementById("container").innerHTML += modalContents;
                                 }
                             });
-                        }
 
-                        setTimeout(function() {
-                            document.querySelectorAll(
-                                ".modal-background, .modal-close,.modal-card-head .delete, .modal-card-foot .button"
-                            ).forEach(($el) => {
-                                const $modal = $el.closest(".modal");
-                                $el.addEventListener("click", () => {
-                                    $modal.classList.remove("is-active");
+                            setTimeout(function() {
+                                document.querySelectorAll(
+                                    ".modal-background, .modal-close,.modal-card-head .delete, .modal-card-foot .button"
+                                ).forEach(($el) => {
+                                    const $modal = $el.closest(".modal");
+                                    $el.addEventListener("click", () => {
+                                        $modal.classList.remove("is-active");
+                                    });
                                 });
-                            });
 
+                                document.getElementById("modal-" + commit).classList.add("is-active");
+                            }, 1000);
+                        } else {
                             document.getElementById("modal-" + commit).classList.add("is-active");
-                        }, 1000);
+                        }
                     }
 
                     // Function to close the modal
                     function closeModal() {
-                        // document.getElementById("modal-2")
-                        //     .classList.remove("is-active");
                         document.querySelectorAll(
                             ".modal"
                         ).forEach(($el) => {
@@ -324,7 +255,6 @@
                         }
                     });
                 </script>
-                <p><small>This table will load, give it a minute to retrieve all the data</small></p>
             </div>
         </div>
         <div class="card" id="team">

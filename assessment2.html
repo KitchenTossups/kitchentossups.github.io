@@ -24,6 +24,7 @@
         <div class="subtitle">
             <p>Piazza Panic - ENG1 Cohort 1 Team 9</p>
         </div>
+        <img src="118891201.png" height="90px" width="90px">
     </div>
 </section>
 <div id="content">
@@ -206,25 +207,26 @@
                                     document.getElementById("container").innerHTML += modalContents;
                                 }
                             });
-                        }
 
-                        setTimeout(function() {
-                            document.querySelectorAll(
-                                ".modal-background, .modal-close,.modal-card-head .delete, .modal-card-foot .button"
-                            ).forEach(($el) => {
-                                const $modal = $el.closest(".modal");
-                                $el.addEventListener("click", () => {
-                                    $modal.classList.remove("is-active");
+                            setTimeout(function() {
+                                document.querySelectorAll(
+                                    ".modal-background, .modal-close,.modal-card-head .delete, .modal-card-foot .button"
+                                ).forEach(($el) => {
+                                    const $modal = $el.closest(".modal");
+                                    $el.addEventListener("click", () => {
+                                        $modal.classList.remove("is-active");
+                                    });
                                 });
-                            });
 
+                                document.getElementById("modal-" + commit).classList.add("is-active");
+                            }, 1000);
+                        } else {
                             document.getElementById("modal-" + commit).classList.add("is-active");
-                        }, 1000);
+                        }
                     }
 
                     // Function to close the modal
                     function closeModal() {
-                        // document.getElementById("modal-2")
                         //     .classList.remove("is-active");
                         document.querySelectorAll(
                             ".modal"
@@ -246,7 +248,6 @@
                         }
                     });
                 </script>
-                <p><small>This table will load, give it a minute to retrieve all the data</small></p>
             </div>
         </div>
     </div>
