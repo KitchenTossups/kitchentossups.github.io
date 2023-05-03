@@ -1,0 +1,421 @@
+@startuml
+title Relationships - Class Diagram
+package baseGame{
+  class baseGame{
+    -BaseGame game
+    +void create()
+    +void setActiveScreen
+  } 
+}
+package baseActor{
+  class baseActor {
+    +float x
+    +float y
+    +Stage s
+    +float loci
+  __private data__
+  -float elapsedTime, loci
+  -Rectangle boundaryRectangle
+  -Polygon boundaryPolygon
+  --
+  +void setAnimation()
+    +Animation<textureRegion> anim
+    ..
+  +void loadAnimationFromSheet()
+    +Animation<textureRegion> anim
+    +float w
+    +float h
+    +int rows
+    +int cols
+    +float frameDuration
+    +boolean loop
+    ..
+  +void loadAnimationFromFiles()
+    +String[] filenames
+    +float frameDuration
+    +boolean loop
+    +float h
+    +float w
+  --
+  +void loadTexture()
+    +String filename
+    +float w
+    +float h
+  ..
+  +void setTexture()
+    +Texture texture
+    +TextureRegion textureRegion
+  --
+  +void setBoundaryRectangle()
+  ..
+  +Rectangle getBoundaryRectanlge()
+  ..
+  +Rectangle getLociRectangle()
+  --
+  +void act()
+    +float dt
+  --
+  +void draw()
+    +Batch batch
+    +float parentAlpha
+  }
+}
+package Actor{
+  class Chef
+  class IngredientActor
+  class Table
+  class FoodActor
+  class Customer
+}
+class Chef{
+  +float x 
+  +float y
+  +Stage s
+  +int chefNumber
+  __private data __
+  -Object inventoryItem
+  --
+  +Object getInventoryItem()
+  --
+  +void setInventoryItem()
+  }
+class Customer{
+  +float x
+  +float y
+  +Stage s
+  +Recipe order
+  __private data__
+  - Recipe order
+  --
+  +Recipe getOrder()
+  ..
+  +long getOrderPlaced()
+  }
+class FoodActor{
+  +float x
+  +float y
+  +Stage s
+  +Food f
+  __private data__
+  -Food food
+  --
+  +Food getFood()
+}
+class IngredientActor{
+  +float x
+  +float y
+  +Stage s
+  +Ingredient ingredient
+  __private data__
+  -Ingredient ingredient
+  -TextureRegion[][] textureRegions
+  --
+  +Ingredient getIngredient()
+  --
+  +void makeReady()
+}
+class Table{
+  +Stage s
+}
+
+package enums{
+  enum FoodChestType
+  enum IngredientState
+  enum Item
+  enum ItemTableType
+  enum Mode
+  enum Product
+  enum StationType
+}
+enum FoodChestType{
+  DRY_FOOD
+  FRESH_FOOD
+  FROZEN_FOOD
+}
+enum IngredientState{
+  UNPREPARED
+  PREPARED
+  UNCUT
+  CUT
+  UNCOOKED
+  HALF_COOKED
+  COOKED
+  OVERCOOKED
+}
+enum Item{
+  TOPBUN
+  BOTTOMBUN
+  PATTY
+  CHEESE
+  LETTUCE
+  TOMATO
+  ONION
+}
+enum ItemTableType{
+  COUNTER_SCREEN
+  PREP_SCREEN
+}
+enum Mode{
+  ASSESSMENT_1
+  ASSESSMENT_2
+}
+enum Product{
+  BURGER
+  SALAD
+}
+enum StationType{
+  BIN
+  CHOPPING
+  COUNTER
+  FOOD_CHEST
+  GRILL
+  PREP
+  SERVING
+}
+
+package non-actor{
+  class Food
+  class Ingredient
+  class Recipe
+}
+class Food{
+  __private data __
+  -Recipe recipe
+  -List<Ingredients> CurrentIngredients
+  --
+  +Recipe getRecipe()
+  --
+  +void addIngredient()
+  --
+  +List<Ingredients> getCurrentIngredients()
+  --
+  +Boolean ready()
+  }
+class Ingredient{
+  __private data __
+  -Item item
+  -IngredientState state
+  --
+  +Item getItem()
+  --
+  +IngredientState getState()
+  --
+  +void setState()
+
+  }
+class Recipe{
+  __private data __
+  -Product endProduct
+  -List<Ingredient> ingredients
+  --
+  +Boolean satisfied()
+  --
+  +String getSIngredients()
+  +Iterator var2
+  --
+  -List<Ingredient> generateIngredientList()
+  }
+
+package room{
+  class Counter
+  class Station
+}
+class Counter{
+  +float x
+  +float y
+  +int width
+  +int height
+  +Stage s
+  }
+class Station{
+  +float x
+  +float y
+  +int width
+  +int height
+  +float loci
+  +StationType stationType
+  +GameScreen gameScreen
+  +PiazzaPanic game
+  +Stage s
+  __private data__
+  -Object storage
+  -BaseScreen screen
+  -FoodChestType foodChestType
+  --
+  +StationType getStationType()
+  --
+  +Object getStorage()
+  --
+  +void setStorage()
+  --
+  +BaseScreen getScreen()
+  --
+  +FoodChestType getFoodChestType()
+  }
+
+
+
+package baseScreen{
+  class BaseScreen
+}
+class BaseScreen{
+  #Stage mainStage
+  #Stage uiStage
+  #Stage uiTable
+  ..
+  +void render()
+  ..
+  +void resize()
+  ..
+  +void pause()
+  ..
+  +void resume()
+  ..
+  +void dispose()
+  ..
+  +void show()
+  ..
+  +void hide()
+  ..
+  +boolean keyDown()
+  ..
+  +boolean keyUp()
+  ..
+  +boolean keyTyped()
+  ..
+  +boolean mouseMoved()
+  ..
+  +boolean scrolled()
+  ..
+  +boolean touchDown()
+  ..
+  +boolean touchDragged()
+  ..
+  +boolean touchUp()
+   
+}
+
+
+
+package screen{
+  class BinScreen
+  class ChoppingScreen
+  class FoodChestScreen
+  class GameScreen
+  class GrillScreen
+  class ItemTableScreen
+  class MainMenuScreen
+  class OrderScreen
+  }
+class BinScreen{
+  +GameScreen gameScreen
+  +PiazzaPanic game
+  --
+  +void update()
+  }
+class ChoppingScreen{
+  __private data__
+  -GameScreen gameScreen
+  -PiazzaPanic game
+  -IngredientActor ingredientActor
+  -BaseActor knife
+  --
+  +void update()
+  --
+  +IngredientActor getIngredientActor()
+  }
+class FoodChestScreen{
+  __private data__
+  -GameScreen gameScreen
+  -PiazzaPanic game
+  --
+  +void update()
+  }
+class GameScreen{
+  +PiazzaPanic game
+  +Mode mode
+  +OrthographicCamera camera
+  +List<Station> stations
+  +List<Counter> counters
+  +Chef[] chefs
+  +List<Customer> customers
+  +List<IngredientActor> ingredientActors
+  +Label messageLabel
+  +int width
+  +int height
+  __private data__
+  -boolean tabPressed
+  -int chefSelector
+  -int binnedItems
+  -long messageTimer
+  -long movementTimer
+  --
+  +void update()
+  --
+  +int getChefSelector()
+  --
+  +int getBinnedItems()
+  --
+  +void increaseBinnedItems()
+  --
+  +Stage getMainStage()
+  --
+  -void checkCollision()
+  --
+  -void stationProximity()
+  --
+  -void timerCheck()
+  }
+class GrillScreen{
+  __private data__
+  -GameScreen gameScreen
+  -PiazzaPanic game
+  -Object[] items
+  --
+  +void update()
+  }
+class ItemTableScreen{
+  __private data__
+  -GameScreen gameScreen
+  -PiazzaPanic game
+  -ItemTableType itemTableType
+  -Object[] items
+  --
+  +void update()
+  }
+class MainMenuScreen{
+  __private data__
+  -PiazzaPanic game
+  -int width
+  -int height
+  -Mode mode
+  -float loci
+  --
+  +void update()
+  }
+class OrderScreen{
+  __private data__
+  -GameScreen gameScreen
+  -PiazzaPanic game
+  -Label label
+  -Customer customer
+  --
+  +void update()
+  }
+baseActor <|-down- Chef: Extends
+baseActor <|-down- Customer: Extends
+baseActor <|-down- FoodActor: Extends
+baseActor  *-up-  IngredientActor: Extends
+baseActor  *-up-  Table: Extends
+baseActor <|-down- Counter: Extends
+baseActor <|-down- Station: Extends
+BaseScreen <|-down- BinScreen: Extends
+BaseScreen <|-down- ChoppingScreen: Extends
+BaseScreen <|-down- FoodChestScreen: Extends
+BaseScreen <|-down- GameScreen: Extends
+BaseScreen <|-down- GrillScreen: Extends
+BaseScreen <|-down- ItemTableScreen: Extends
+BaseScreen <|-down- MainMenuScreen: Extends
+BaseScreen <|-down- OrderScreen: Extends
+Actor <|-down- baseActor: Extends
+@enduml
