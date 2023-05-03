@@ -324,58 +324,59 @@
                 <div class="content">
                     <p>
                 As automated testing was not used in this project, no testing or coverage report has been generated. We can, however, provide details on the test cases used for each manual test, which were as follows:
-                Our tests have been broken down into 6 groups by similarity. This allowed us to efficiently test the game by focussing on a specific functionality. We have shown how we have tested our game by giving specific system configurations that allowed us to perform a specific test.
+                
                 <br><br>
-                System requirements<br>
-                ScaleTest - Resize the window to 1920 x 1080 and 1366 x 768 when in game and then continue playing and ensure no bugs. Try full-screen mode, and the minimum window size.
-                OSTest - Attempt to play the game on different operating systems - Windows and Mac OS
-                MemoryUsageTest - Play the game as normal and monitor the amount of RAM being used using the OS's system resource monitor e.g. Task Manager in Windows to ensure less than 4GB is used.
-                SmoothGameTest - Play the game as normal and observe that the game runs sufficiently smoothly and not appear jittery to the player.
-                FastInteractTest - Time the amount of time it takes to pick up an ingredient after pressing the E key is less than 2 seconds
-                SaveStateTest - Compare the output file when the game is saved to what is intended.
+                <u>System requirements</u><br>
+                ScaleTest - Resize the window to 1920 x 1080 and 1366 x 768 when in game and then continue playing and ensure no bugs. Try full-screen mode, and the minimum window size.<br>
+                OSTest - Attempt to play the game on different operating systems - Windows and Mac OS<br>
+                MemoryUsageTest - Play the game as normal and monitor the amount of RAM being used using the OS's system resource monitor e.g. Task Manager in Windows to ensure less than 4GB is used.<br>
+                SmoothGameTest - Play the game as normal and observe that the game runs sufficiently smoothly and not appear jittery to the player.<br>
+                FastInteractTest - Time the amount of time it takes to pick up an ingredient after pressing the E key is less than 2 seconds.<br>
+                SaveStateTest - Compare the output file when the game is saved to what is intended.<br>
                 ReadSaveTest - Ensure the game is resumed to match the previously saved game.
                 <br><br>
-                Game Design<br>
-                FunGameTest - Is a level of enjoyment experienced that is comparable to playing other games of a similar style.
-                RestaurantDesignTest - Observe both the Piazza Building and the game’s restaurant design and pass the test if there are clear similarities between them
-                DifficultyTest - Go to the game's settings and change the game’s difficulty level, then play the game to see whether the game is noticeably different in difficulty from level to level.
-                CollisionDetectionTest - Walk around the kitchen floor with the chefs and ensure that they cannot be moved outside of the kitchen floor and are not able to traverse over kitchen counters. Also observe that chef’s are not able to collide with each other.
+                Game Design</u><br>
+                FunGameTest - Is a level of enjoyment experienced that is comparable to playing other games of a similar style.<br>
+                RestaurantDesignTest - Observe both the Piazza Building and the game’s restaurant design and pass the test if there are clear similarities between them.<br>
+                DifficultyTest - Go to the game's settings and change the game’s difficulty level, then play the game to see whether the game is noticeably different in difficulty from level to level.<br>
+                CollisionDetectionTest - Walk around the kitchen floor with the chefs and ensure that they cannot be moved outside of the kitchen floor and are not able to traverse over kitchen counters. Also observe that chef’s are not able to collide with each other.<br>
                 IntuitivenessTest - Open the game and observe whether a screen is displayed showing the game’s control scheme and when pressing the ESC key whilst in game opens a pause menu.
 
                 <br><br>
-                Player Functionality<br>
-                GameOverTest - Wait for three orders to go over the time limit without using any power ups to ensure all reputation points are lost.
-                GameWinTest - Successfully complete all orders with at least one reputation point remaining.
-                LoseReputationPointTest - Wait for an order to go over the time limit and check if a reputation point is lost.
+                <u>Player Functionality</u><br>
+                GameOverTest - Wait for three orders to go over the time limit without using any power ups to ensure all reputation points are lost.<br>
+                GameWinTest - Successfully complete all orders with at least one reputation point remaining.<br>
+                LoseReputationPointTest - Wait for an order to go over the time limit and check if a reputation point is lost.<br>
                 StartReputationPointsTest - Run the game and ensure that in the top left corner of the screen the player has 3 reputation points.
                 <br><br>
-                Customer<br>
-                ServeCustomerTest - Run the game and check that orders appear on the left hand side.
-                ServeDishTest - Once holding a completed item (burger) and pressing E at the serving counter observe the relevant order be removed from the order list and removed from the chef’s possession.
-                LimitedTimeTest - Run the game at each difficulty setting and observe the customers orders leave the screen after they have been present for 240 seconds in easy, 180 seconds in medium and 120 seconds in hard mode.
-                CustomerArrivalsTest - Complete several orders to check that new orders arrive either individually or in groups of two or three
+                <u>Customer</u><br>
+                ServeCustomerTest - Run the game and check that orders appear on the left hand side.<br>
+                ServeDishTest - Once holding a completed item (burger) and pressing E at the serving counter observe the relevant order be removed from the order list and removed from the chef’s possession.<br>
+                LimitedTimeTest - Run the game at each difficulty setting and observe the customers orders leave the screen after they have been present for 240 seconds in easy, 180 seconds in medium and 120 seconds in hard mode.<br>
+                CustomerArrivalsTest - Complete several orders to check that new orders arrive either individually or in groups of two or three.
                 <br><br>
-                Cooks<br>
-                ControlOneCookTest - Using both control schemes WASD and the arrow keys ensure that only one of the cooks is moved.
-                SwitchCooksTest - Move one chef using the control scheme, then press the TAB key, then observe for a different chef being moved when using the controls.
-                ControlCookTest - Ensure that only WASD and the arrow keys are able to move the current chef. Check all other keys and ensure they do not move the chef’s position on the screen.
-                ControlCookTest (2)- Observe that when pressing E on a station whilst holding a correct food item (raw patty) the station(frying) performs its task(cooks the patty producing a cooked patty). 
-                CarryTest - Go to the ingredient pantry and then select a food item. Then observe that the game will not allow another item to be picked up as long as that one is being held.
+                <u>Cooks</u><br>
+                ControlOneCookTest - Using both control schemes WASD and the arrow keys ensure that only one of the cooks is moved.<br>
+                SwitchCooksTest - Move one chef using the control scheme, then press the TAB key, then observe for a different chef being moved when using the controls.<br>
+                ControlCookTest - Ensure that only WASD and the arrow keys are able to move the current chef. Check all other keys and ensure they do not move the chef’s position on the screen.<br>
+                ControlCookTest (2)- Observe that when pressing E on a station whilst holding a correct food item (raw patty) the station(frying) performs its task(cooks the patty producing a cooked patty). <br>
+                CarryTest - Go to the ingredient pantry and then select a food item. Then observe that the game will not allow another item to be picked up as long as that one is being held.<br>
                 CarryTest - Walk up to an item, press the E key and observe the chef picking up the item.
                 <br><br>
-                Ingredients<br>
-                PattyFlipTest - Obtain an uncooked patty, place it in a frying pan and attempt to flip it before the side facing downwards has finished cooking
-                BurgerTest - Try serving a properly-constructed burger, then other variations (e.g. bottom bun, patty, bottom bun or bottom bun, uncooked patty, top bun)
-                SaladTest - Try serving a properly-constructed salad, then other variations (e.g. a salad with no lettuce, a salad containing a jacket potato, a salad with a whole onion)
-                PizzaTest - Try serving a properly-constructed pizza, then other variations (e.g. a pizza with no sauce, a pizza with baked beans, an uncooked pizza)
-                JacketPotatoTest - Try serving a properly-constructed jacket potato, then other variations (e.g. just baked beans and cheese, a potato with a burger patty, an uncooked potato)
-                In all cases, attempt to serve variations with ingredients missing, incorrect ingredients added and ingredients in an incorrect state
+                <u>Ingredients</u><br>
+                PattyFlipTest - Obtain an uncooked patty, place it in a frying pan and attempt to flip it before the side facing downwards has finished cooking.<br>
+                BurgerTest - Try serving a properly-constructed burger, then other variations (e.g. bottom bun, patty, bottom bun or bottom bun, uncooked patty, top bun).<br>
+                SaladTest - Try serving a properly-constructed salad, then other variations (e.g. a salad with no lettuce, a salad containing a jacket potato, a salad with a whole onion).<br>
+                PizzaTest - Try serving a properly-constructed pizza, then other variations (e.g. a pizza with no sauce, a pizza with baked beans, an uncooked pizza).<br>
+                JacketPotatoTest - Try serving a properly-constructed jacket potato, then other variations (e.g. just baked beans and cheese, a potato with a burger patty, an uncooked potato).<br>
+                In all cases, attempt to serve variations with ingredients missing, incorrect ingredients added and ingredients in an incorrect state.
                 <br><br>
-                PowerUpTest<br>
-                Extra life - Observe that when the extra life power up is available (through a heart icon being present in the centre of the kitchen counter) and clicked and extra reputation point is added for the player
-                Increase chef speed - Observe that when the Increase chef speed power up is available (through a lightning bolt icon being present in the centre of the kitchen counter) that the chef’s movement speed is noticeably increased allowing the chef to traverse the kitchen quicker.
-                Clear next order - Observe that when the Clear next order power up is available (through a green tick icon being present in the centre of the kitchen counter) the next order on the order list on the left side of the screen is removed from the players order list.
-                Speed up chopping - Observe that when the Speed up chopping power up is available (through a knife icon being present in the centre of the kitchen counter) that the chef’s chopping speed is noticeably increased allowing the chef to chop ingredients at the chopping station quicker.
+                <u>PowerUps</u><br>
+                    PowerUpTest - Each powerup is tested individually to ensure correct functionality.<br>
+                Extra life - Observe that when the extra life power up is available (through a heart icon being present in the centre of the kitchen counter) and clicked and extra reputation point is added for the player.<br>
+                Increase chef speed - Observe that when the Increase chef speed power up is available (through a lightning bolt icon being present in the centre of the kitchen counter) that the chef’s movement speed is noticeably increased allowing the chef to traverse the kitchen quicker.<br>
+                Clear next order - Observe that when the Clear next order power up is available (through a green tick icon being present in the centre of the kitchen counter) the next order on the order list on the left side of the screen is removed from the players order list.<br>
+                Speed up chopping - Observe that when the Speed up chopping power up is available (through a knife icon being present in the centre of the kitchen counter) that the chef’s chopping speed is noticeably increased allowing the chef to chop ingredients at the chopping station quicker.<br>
                 Speed up cooking - Observe that when the Speed up cooking up is available (through a frying pan icon being present in the centre of the kitchen counter) that the chef’s cooking speed is noticeably increased allowing the chef to cook ingredients at the frying station and the oven quicker.
                     </p>
                     
